@@ -2,7 +2,7 @@
 
 ## What?
 
-Simplistic Go logging library that focused only what's important!
+Simplistic Go logging library that is focused only what's important!
 
 ## Why? 
 
