@@ -79,6 +79,9 @@ type Logger interface {
 
 	SetLevel(level Level)
 	Level() Level
+	Out() io.Writer
+	Fields() []Field
+
 	WithErr(err error) PrintLogger
 	WithField(key, val string) Logger
 }
@@ -236,4 +239,12 @@ func itoa(buf *[]byte, i int, wid int) {
 	// i < 10
 	b[bp] = byte('0' + i)
 	*buf = append(*buf, b[bp:]...)
+}
+
+func (l *SimpleLogger) Fields() []Field {
+	return l.fields
+}
+
+func (l *SimpleLogger) Out() io.Writer {
+	return l.out
 }
