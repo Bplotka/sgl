@@ -33,7 +33,7 @@ func TestSimpleLogger_ErrorLevel(t *testing.T) {
 	}
 
 	s.Error("test_error")
-	assert.Equal(t, fmt.Sprintf("time=\"%s\" lvl=error msg=\"test_error\" file=log_test.go:35\n",
+	assert.Equal(t, fmt.Sprintf("time=\"%s\" lvl=error msg=\"test_error\" file=log_test.go:37\n",
 		now.String()), b.String())
 }
 
@@ -52,8 +52,8 @@ func TestSimpleLogger_InfoLevel(t *testing.T) {
 	s.Info("test_info")
 	s.Error("test_error")
 	assert.Equal(t, fmt.Sprintf(
-		"time=\"%s\" lvl=info msg=\"test_info\" file=log_test.go:52\n"+
-			"time=\"%s\" lvl=error msg=\"test_error\" file=log_test.go:53\n",
+		"time=\"%s\" lvl=info msg=\"test_info\" file=log_test.go:54\n"+
+			"time=\"%s\" lvl=error msg=\"test_error\" file=log_test.go:55\n",
 		now.String(), now.String()), b.String())
 }
 
@@ -71,9 +71,9 @@ func TestSimpleLogger_DebugLevel(t *testing.T) {
 	s.Info("test_info")
 	s.Error("test_error")
 	assert.Equal(t, fmt.Sprintf(
-		"time=\"%s\" lvl=debug msg=\"test_debug\" file=log_test.go:70\n"+
-			"time=\"%s\" lvl=info msg=\"test_info\" file=log_test.go:71\n"+
-			"time=\"%s\" lvl=error msg=\"test_error\" file=log_test.go:72\n",
+		"time=\"%s\" lvl=debug msg=\"test_debug\" file=log_test.go:72\n"+
+			"time=\"%s\" lvl=info msg=\"test_info\" file=log_test.go:73\n"+
+			"time=\"%s\" lvl=error msg=\"test_error\" file=log_test.go:74\n",
 		now.String(), now.String(), now.String()), b.String())
 }
 
@@ -90,6 +90,6 @@ func TestSimpleLogger_WithField(t *testing.T) {
 	muted := s.WithField("testKey", "testValue")
 	muted.Info("test_info")
 	assert.Equal(t, fmt.Sprintf(
-		"time=\"%s\" lvl=info msg=\"test_info\" testKey=\"testValue\" file=log_test.go:91\n",
+		"time=\"%s\" lvl=info msg=\"test_info\" testKey=\"testValue\" file=log_test.go:93\n",
 		now.String()), b.String())
 }
