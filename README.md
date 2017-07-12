@@ -1,4 +1,5 @@
-# sgl
+# sgl [![Build Status](https://travis-ci.org/Bplotka/sgl.svg?branch=master)](https://travis-ci.org/Bplotka/sgl) [![Go Report Card](https://goreportcard.com/badge/github.com/Bplotka/sgl)](https://goreportcard.com/report/github.com/Bplotka/sgl)
+
 
 ## What?
 
@@ -16,9 +17,9 @@ So why using unsuitable one, if you can write your own based on your experience 
 Inspired by [logrus](https://github.com/sirupsen/logrus), [this](https://dave.cheney.net/2015/11/05/lets-talk-about-logging) post and lots of internal loggers I had occasion to use.
 
 - [X] Levels
-- [X] Structure logging
+- [X] Structured logging
 - [X] Tests
+- [x] CI
 - [ ] Comments
 - [ ] GoDoc 
-- [ ] CI
 - [ ] Remote logging (with gRPC?)
